@@ -5,7 +5,7 @@
             <div class="flex flex-col text-center">
                 <img src="./img/drama.jpg" alt="" class="w-3/4 h-48 object-contain mx-auto mt-2 mb-5">
                 <h4 class="font-bold uppercase mb-3">Anjay</h4>
-                <button class="bg-blue-500 text-white rounded-md mx-auto w-2/4 h-6">Borrow</button>
+                <button class="bg-blue-500 text-white rounded-md mx-auto w-2/4 h-6 hover:text-2xl hover:scale-150 hover:bg-lime-200">Borrow</button>
             </div>
         </div>
         <div class="w-1/5 h-full border border-red-500">
