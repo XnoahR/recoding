@@ -5,3 +5,7 @@
     @include('layouts.bookshelf2')
     @include('layouts.bookshelf3')
 @endsection
+
+@section('footer')
+    @include('layouts.footer')  
+@endsection 

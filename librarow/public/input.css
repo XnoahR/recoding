@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components{
+    .Tline::before{
+        @apply content-[''] w-72 h-px bg-black absolute translate-y-5 left-64;
+    }
+    .Tline::after{
+        @apply content-[''] w-72 h-px bg-black absolute translate-y-5 right-64;
+    }
+    
+}

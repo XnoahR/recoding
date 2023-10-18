@@ -1,4 +1,4 @@
-<nav class="bg-blue-500 w-full h-20 sticky top-0">
+<nav class="bg-blue-500 w-full h-20 sticky top-0 z-50">
     <div class="flex justify-between align-middle">
         <div class="align-middle mt-5 ms-3 text-xl flex ">
             <img src="./img/logo.png" width="30" alt="">

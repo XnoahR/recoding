@@ -13,6 +13,7 @@
       @yield('main')
     </main>
 
+    @yield('footer')
     @include('layouts.script')
 </body>
 </html>
