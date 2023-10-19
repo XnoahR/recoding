@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('author');
             $table->integer('available')->default(1);
             $table->string('cover')->nullable();
-            $table->enum('category', ['fiction', 'non-fiction', 'biography', 'poetry', 'children', 'history', 'science', 'technology', 'art', 'travel', 'cookery', 'health', 'self-help', 'other']) ->nullable();
+            $table->enum('category', ['comic','drama','romance','horror','biography','socio']) ->nullable();
             $table->timestamps();
         });
     }
