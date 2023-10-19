@@ -6,8 +6,8 @@
         </div>
         <div>
             <ul class="flex space-x-3 pe-3 align-middle mt-5 text-lg text-white">
-                <li>Home</li>
-                <li>Categories</li>
+                <li><a href="/home">Home</a></li>
+                <li><a href="/categories">Categories</a></li>
                 <li>Profile</li>
                 <li>Logout</li>
             </ul>
