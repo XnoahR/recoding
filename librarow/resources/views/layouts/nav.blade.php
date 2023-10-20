@@ -8,7 +8,7 @@
             <ul class="flex space-x-3 pe-3 align-middle mt-5 text-lg text-white">
                 <li><a href="/home">Home</a></li>
                 <li><a href="/categories">Categories</a></li>
-                <li>Profile</li>
+                <li><a href="/profile">Profile</a></li>
                 <li>Logout</li>
             </ul>
         </div>
