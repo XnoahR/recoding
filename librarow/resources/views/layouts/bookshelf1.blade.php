@@ -15,28 +15,28 @@
             <div class="flex flex-col text-center">
                 <img src="./img/comic.jpg" alt="" class="w-3/4 h-48 object-contain mx-auto mt-2 mb-5">
                 <h4 class="font-bold uppercase mb-3">Book</h4>
-                <button class="bg-blue-500 text-white rounded-md mx-auto w-2/4 h-6">Borrow</button>
+                <a href="/borrow"><button class="bg-blue-500 text-white rounded-md mx-auto w-2/4 h-6">Borrow</button></a>
             </div>
         </div>
         <div class="w-1/5 h-full ">
             <div class="flex flex-col text-center">
                 <img src="./img/horror.jpg" alt="" class="w-3/4 h-48 object-contain mx-auto mt-2 mb-5">
                 <h4 class="font-bold uppercase mb-3">Book</h4>
-                <button class="bg-blue-500 text-white rounded-md mx-auto w-2/4 h-6">Borrow</button>
+                <a href="/borrow"><button class="bg-blue-500 text-white rounded-md mx-auto w-2/4 h-6">Borrow</button></a>
             </div>
         </div>
         <div class="w-1/5 h-full ">
             <div class="flex flex-col text-center">
                 <img src="./img/naruto.jpg" alt="" class="w-3/4 h-48 object-contain mx-auto mt-2 mb-5">
                 <h4 class="font-bold uppercase mb-3">Book</h4>
-                <button class="bg-blue-500 text-white rounded-md mx-auto w-2/4 h-6">Borrow</button>
+                <a href="/borrow"><button class="bg-blue-500 text-white rounded-md mx-auto w-2/4 h-6">Borrow</button></a>
             </div>
         </div>
         <div class="w-1/5 h-full">
             <div class="flex flex-col text-center">
                 <img src="./img/stevejob.png" alt="" class="w-3/4 h-48 object-contain mx-auto mt-2 mb-5">
                 <h4 class="font-bold uppercase mb-3">Book</h4>
-                <button class="bg-blue-500 text-white rounded-md mx-auto w-2/4 h-6">Borrow</button>
+                <a href="/borrow"><button class="bg-blue-500 text-white rounded-md mx-auto w-2/4 h-6">Borrow</button></a>
             </div>
         </div>
 
