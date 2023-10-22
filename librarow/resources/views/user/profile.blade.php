@@ -1,5 +1,11 @@
 @extends('layouts.main')
 
 @section('main')
-<H1 class="text-4xl">UNDER CONTRUCTION!</H1>
+<section class="w-11/12 h-1/2-screen mx-auto my-6 border border-red-500 flex">
+    
+
+</section>
+@endsection
+@section('footer')
+@include('layouts.footer')
 @endsection
