@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('main')
- <div class="h-2/3 w-10/12 bg-white border border-blue-500 border-opacity-40 shadow-md shadow-blue-500 rounded-2xl mx-auto my-6">
+ <div class="h-2/3 w-10/12 bg-white border border-blue-500 border-opacity-40 shadow-md shadow-blue-500 rounded-2xl mx-auto my-6 py-6">
     <div class="w-full h-16 text-center align-middle">
         <h1 class="text-4xl text-blue-500 font-bold uppercase mt-2 Tline">Categories</h1>
     </div>
