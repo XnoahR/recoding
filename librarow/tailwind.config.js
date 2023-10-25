@@ -6,6 +6,7 @@ export default {
       height: {
         '1/2-screen': '50vh',
         '3/4-screen': '75vh',
+        '108' : '27rem',
         '150' : '37.5rem',
       },
     },
