@@ -23,4 +23,4 @@ Route::get('/home', function(){
 Route::get('/categories',function(){return view('categories');})->name('categories');
 Route::get('/borrow',function(){return view('user.borrow_book');})->name('borrow');
 Route::get('/profile',function(){return view('user.profile');})->name('profile');
-Route::get('/profile-edit',function(){return view('user.edit_profile');})->name('profile-edit');
+Route::get('/profile/edit',function(){return view('user.edit_profile');})->name('profile-edit');
