@@ -1,7 +1,7 @@
 <nav class="bg-blue-500 w-full h-20 sticky top-0 z-50">
     <div class="flex justify-between align-middle">
         <div class="align-middle mt-5 ms-3 text-xl flex ">
-            <img src="./img/logo.png" width="30" alt="">
+            <img src="{{ asset("./img/logo.png") }}" width="30" alt="">
             <span class="text-2xl font-medium font-sans text-white">Librarow</span>
         </div>
         <div>
