@@ -25,3 +25,5 @@ Route::get('/categories/list',function(){return view('list');})->name('book-cate
 Route::get('/borrow',function(){return view('user.borrow_book');})->name('borrow');
 Route::get('/profile',function(){return view('user.profile');})->name('profile');
 Route::get('/profile/edit',function(){return view('user.edit_profile');})->name('profile-edit');
+
+Route::get('/admin',function(){return view('admin.dashboard');})->name('admin');
