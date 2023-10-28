@@ -2,10 +2,10 @@
 
 @section('main')
 <section class="w-full mx-auto h-auto grid grid-cols-12 my-16 gap-3">
-    <div class="col-span-3 bg-blue-300">
+    <div class="col-span-2  bg-blue-300">
         List
     </div>
-    <div class="col-span-9 grid grid-cols-3 gap-3">
+    <div class="col-span-9 col-start-4 grid grid-cols-3 gap-3">
         <div class="col-span-1 h-108 border border-red-500 flex flex-col justify-evenly">
             <img src="{{ asset('./img/comic.jpg') }}" alt="" class="w-28 mx-auto">
             <h2 class="font-bold text-lg text-center text-blue-500">

@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('main')
-   <div class="mx-auto mt-10 rounded-xl h-150 w-10/12 border border-blue-500 flex">
+   <div class="mx-auto my-10 rounded-xl h-150 w-10/12 border border-blue-500 flex">
     <div class="h-full w-2/5 ">
         <img src="./img/horror.jpg" alt="" class="w-4/6 mx-auto mt-12 shadow-xl shadow-gray-700 ">
     </div>
