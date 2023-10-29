@@ -10,7 +10,7 @@
            <h1 class="text-4xl uppercase text-blue-500 font-bold mt-3">Frog Rider</h1>
         </div>
         <div class=" w-full h-1/6">
-            <h2 class="text-xl font-bold mt-3 mb-3 ms-3">Author</h2>
+            <h2 class="text-xl font-bold mt-3 mb-3 ms-3">Authorr</h2>
             <p class="ms-3 font-semibold">Joko Noto Boto</p>
         </div>
         <div class=" w-full h-1/6">
