@@ -21,7 +21,7 @@
                 <img src="{{ asset('./img/notifikasi.png') }}" alt="" class="w-48 mx-auto">
                 <h2 class="font-bold text-blue-500 text-center text-lg uppercase">notifikasi</h2>
                 <a href="#" class="text-center mx-auto bg-blue-500 text-white h-6 w-20 rounded-xl">View</a>
-            </div>
+            </div> 
          
             
             
