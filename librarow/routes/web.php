@@ -28,3 +28,4 @@ Route::get('/profile/edit',function(){return view('user.edit_profile');})->name(
 
 Route::get('/admin',function(){return view('admin.dashboard');})->name('admin');
 Route::get('/data-mahasiswa',function(){return view('admin.data_mahasiswa');})->name('data-mahasiswa');
+Route::get('/data-admin',function(){return view('admin.data_admin');})->name('data-admin');
