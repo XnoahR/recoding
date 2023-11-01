@@ -752,6 +752,11 @@ video {
           margin-inline-start: 1.5rem;
 }
 
+.ms-1 {
+  -webkit-margin-start: 0.25rem;
+          margin-inline-start: 0.25rem;
+}
+
 .flex {
   display: flex;
 }
