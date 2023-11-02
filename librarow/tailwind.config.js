@@ -11,6 +11,7 @@ export default {
       },
       backgroundImage:{
         'library': "url('./img/lib.jpg')",
+        'register': "url('./img/reg.jpg')",
       }
     },
   },

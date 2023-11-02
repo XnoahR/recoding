@@ -37,6 +37,31 @@
         animation-fill-mode: forwards;
     }
 
+    .reg-banner{
+        @apply content-[''] w-full h-0 bg-white relative bottom-0 left-0 transition-all ease-linear duration-1000 ;
+    }
+
+    .log-banner::before{
+        content: '';
+        width: 100%;
+        background-color: white;
+        position: absolute;
+        top: 0;
+        animation-name: log-banners;
+        animation-duration: 2s;
+        animation-fill-mode: forwards;
+    }
+
+    .reg-banner::before{
+        @apply content-[''] w-full  bg-register transition-all ease-linear duration-1000 absolute bottom-0  bg-center bg-no-repeat bg-cover;
+    }
+    
+    .reg-banner::before{
+        animation-name: reg-banners;
+        animation-duration: 2s;
+        animation-fill-mode: forwards;
+    }
+
     .reg-form {
         width: 100%;
         margin-left: auto;
@@ -70,5 +95,15 @@
         to{
             height: 100%;
         }
+    }
+
+    @keyframes reg-banners{
+        from{
+            height: 0;
+        }
+        to{
+            height: 100%;
+        }
+        
     }
 }
