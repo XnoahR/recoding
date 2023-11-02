@@ -17,4 +17,58 @@
         @apply content-[''] w-12 h-12  bg-blue-500 absolute -translate-x-3 z-20;
     }
     
+    
+    
+    .log-banner{
+        @apply content-[''] w-full h-0 bg-white relative bottom-0 left-0 transition-all ease-linear duration-1000 ;
+    }
+
+    /* .log-banner::before{
+        @apply content-[''] w-full  bg-white transition-all ease-linear duration-1000 absolute bottom-0 left-0;
+    } */
+    .log-banner::before{
+        content: '';
+        width: 100%;
+        background-color: white;
+        position: absolute;
+        top: 0;
+        animation-name: log-banners;
+        animation-duration: 2s;
+        animation-fill-mode: forwards;
+    }
+
+    .reg-form {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        z-index: 50;
+        animation-name: reg-come-in;
+        animation-duration: 2s;
+        animation-fill-mode: forwards;
+      }
+      
+    @keyframes reg-come-in {
+        from {
+            opacity: 0;
+            transform: translateY(-100px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+    }
+
+
+    @keyframes log-banners{
+        from{
+            height: 0;
+        }
+        to{
+            height: 100%;
+        }
+    }
 }
