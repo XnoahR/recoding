@@ -20,6 +20,9 @@ Route::get('/', function () {
 Route::get('/home', function(){
     return view('home');
 });
+
+Route::get('/login',function(){return view('login');})->name('login');
+
 Route::get('/categories',function(){return view('categories');})->name('categories');
 Route::get('/categories/list',function(){return view('list');})->name('book-categories');
 Route::get('/borrow',function(){return view('user.borrow_book');})->name('borrow');
