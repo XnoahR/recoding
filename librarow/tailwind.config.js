@@ -9,6 +9,9 @@ export default {
         '108' : '27rem',
         '150' : '37.5rem',
       },
+      backgroundImage:{
+        'library': "url('./img/lib.jpg')",
+      }
     },
   },
   plugins: [],

@@ -9,5 +9,12 @@
     .Tline::after{
         @apply content-[''] w-72 h-px bg-black absolute translate-y-5 right-64;
     }
+
+    /* .Lline{
+        @apply ;
+    } */
+    .Lline::before{
+        @apply content-[''] w-12 h-12  bg-blue-500 absolute -translate-x-3 z-20;
+    }
     
 }

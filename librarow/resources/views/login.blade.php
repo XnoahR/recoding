@@ -1,9 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 @include('layouts.head')
-<body class="bg-gradient-to-br from-cyan-500 to-blue-500 bg-no-repeat">
-    <div class="w-full h-screen">
-        Lorem, ipsum.
+<body class="bg-gradient-to-br from-cyan-600 to-blue-500 bg-no-repeat">
+    <div class="w-full h-screen flex items-center justify-center">
+       <div class="w-2/3 h-5/6 bg-white rounded-xl flex">
+        <div class="h-full w-1/2 bg-library bg-cover bg-no-repeat bg-center rounded-l-xl flex flex-col justify-end">
+            {{-- <img src="{{ asset("./img/lib.jpg") }}" alt="" class="w-full h-full object-cover contrast-75 rounded-l-xl"> --}}
+           <h1 class="text-blue-300 text-xl text-center font-bold mb-5 underline">Create an Account!</h1>
+        </div>
+        <div class="h-full w-1/2 flex flex-col justify-center space-y-12">
+            <h2 class="text-xl font-semibold text-blue-500 text-center ">Login Account</h2>
+            <p class="text-sm text-center w-10/12 mx-auto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam, dolorum provident culpa asperiores molestiae cupiditate repellendus libero molestias architecto consequatur.</p>
+            <form action="" method="post" class="w-full mx-auto flex justify-center flex-col">
+                <input type="email" name="email" id="" class="bg-gray-100 my-3 px-3 w-1/2 h-8 mx-auto border-l-8 border-blue-500">
+                <input type="password" name="password" id="" class="bg-gray-100 my-3 px-3 w-1/2 h-8 mx-auto border-l-8 border-blue-500">
+                <button type="submit" class="bg-blue-500 text-white w-1/2 mx-auto h-8 rounded-md">Login</button>
+            </form>
+            
+        </div>
+       </div>
     </div>
 </body>
 </html>
