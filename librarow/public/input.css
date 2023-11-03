@@ -38,7 +38,7 @@
     }
 
     .reg-banner{
-        @apply content-[''] w-full h-0 bg-white relative bottom-0 left-0 transition-all ease-linear duration-1000 ;
+        @apply content-[''] w-full h-0 bg-register relative bottom-0 left-0 transition-all ease-linear duration-1000 ;
     }
 
     .log-banner::before{
@@ -53,14 +53,15 @@
     }
 
     .reg-banner::before{
-        @apply content-[''] w-full  bg-register transition-all ease-linear duration-1000 absolute bottom-0  bg-center bg-no-repeat bg-cover;
+        @apply content-[''] w-full  bg-white transition-all ease-linear duration-1000 absolute bottom-0  ;
     }
     
     .reg-banner::before{
-        animation-name: reg-banners;
+        animation-name: reg-banners-out;
         animation-duration: 2s;
         animation-fill-mode: forwards;
     }
+    
 
     .reg-form {
         width: 100%;
@@ -97,12 +98,22 @@
         }
     }
 
-    @keyframes reg-banners{
+    @keyframes reg-banners-out{
         from{
             height: 0;
         }
         to{
             height: 100%;
+        }
+        
+    }
+
+    @keyframes reg-banners-in{
+        from{
+            height: 100%;
+        }
+        to{
+            height: 0;
         }
         
     }

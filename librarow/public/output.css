@@ -564,36 +564,9 @@ video {
         @apply ;
     } */
 
-.log-banner {
-  position: relative;
-  bottom: 0px;
-  left: 0px;
-  height: 0px;
-  width: 100%;
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-  transition-property: all;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 1000ms;
-  transition-timing-function: linear;
-  --tw-content: '';
-  content: var(--tw-content);
-}
-
 /* .log-banner::before{
         @apply content-[''] w-full  bg-white transition-all ease-linear duration-1000 absolute bottom-0 left-0;
     } */
-
-.log-banner::before{
-  content: '';
-  width: 100%;
-  background-color: white;
-  position: absolute;
-  top: 0;
-  animation-name: log-banners;
-  animation-duration: 2s;
-  animation-fill-mode: forwards;
-}
 
 .reg-banner {
   position: relative;
@@ -601,6 +574,19 @@ video {
   left: 0px;
   height: 0px;
   width: 100%;
+  background-image: url('./img/reg.jpg');
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 1000ms;
+  transition-timing-function: linear;
+  --tw-content: '';
+  content: var(--tw-content);
+}
+
+.reg-banner::before {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
   transition-property: all;
@@ -609,34 +595,7 @@ video {
   transition-timing-function: linear;
   --tw-content: '';
   content: var(--tw-content);
-}
-
-.log-banner::before{
-  content: '';
-  width: 100%;
-  background-color: white;
-  position: absolute;
-  top: 0;
-  animation-name: log-banners;
-  animation-duration: 2s;
-  animation-fill-mode: forwards;
-}
-
-.reg-banner::before {
-  position: absolute;
-  bottom: 0px;
-  width: 100%;
-  background-image: url('./img/reg.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  transition-property: all;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 1000ms;
-  transition-timing-function: linear;
-  --tw-content: '';
-  content: var(--tw-content);
-  animation-name: reg-banners;
+  animation-name: reg-banners-out;
   animation-duration: 2s;
   animation-fill-mode: forwards;
 }
@@ -676,13 +635,23 @@ video {
   }
 }
 
-@keyframes reg-banners{
+@keyframes reg-banners-out{
   from{
     height: 0;
   }
 
   to{
     height: 100%;
+  }
+}
+
+@keyframes reg-banners-in{
+  from{
+    height: 100%;
+  }
+
+  to{
+    height: 0;
   }
 }
 
@@ -1376,10 +1345,6 @@ video {
   background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
 }
 
-.bg-library {
-  background-image: url('./img/lib.jpg');
-}
-
 .from-cyan-600 {
   --tw-gradient-from: #0891b2 var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(8 145 178 / 0) var(--tw-gradient-to-position);
@@ -1405,10 +1370,6 @@ video {
 
 .to-blue-500 {
   --tw-gradient-to: #3b82f6 var(--tw-gradient-to-position);
-}
-
-.bg-cover {
-  background-size: cover;
 }
 
 .bg-center {
