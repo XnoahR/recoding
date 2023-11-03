@@ -595,10 +595,29 @@ video {
   transition-timing-function: linear;
   --tw-content: '';
   content: var(--tw-content);
+}
+
+/* Define a new animation */
+
+@keyframes new-animation {
+  0% {
+    /* Your initial styles here */
+  }
+
+  100% {
+    /* Your final styles here */
+  }
+}
+
+/* Initially apply the "reg-banner" animation */
+
+.reg-banner::before {
   animation-name: reg-banners-out;
   animation-duration: 2s;
   animation-fill-mode: forwards;
 }
+
+/* Create a new CSS class to change the animation */
 
 .reg-form {
   width: 100%;
@@ -1571,6 +1590,11 @@ video {
 .text-gray-900 {
   --tw-text-opacity: 1;
   color: rgb(17 24 39 / var(--tw-text-opacity));
+}
+
+.text-red-500 {
+  --tw-text-opacity: 1;
+  color: rgb(239 68 68 / var(--tw-text-opacity));
 }
 
 .text-white {

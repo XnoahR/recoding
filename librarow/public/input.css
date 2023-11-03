@@ -56,12 +56,27 @@
         @apply content-[''] w-full  bg-white transition-all ease-linear duration-1000 absolute bottom-0  ;
     }
     
-    .reg-banner::before{
-        animation-name: reg-banners-out;
-        animation-duration: 2s;
-        animation-fill-mode: forwards;
-    }
-    
+   /* Define a new animation */
+@keyframes new-animation {
+  0% {
+    /* Your initial styles here */
+  }
+  100% {
+    /* Your final styles here */
+  }
+}
+
+/* Initially apply the "reg-banner" animation */
+.reg-banner::before {
+  animation-name: reg-banners-out;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
+/* Create a new CSS class to change the animation */
+.change-animation::before {
+  animation-fill-mode: backwards;
+}
 
     .reg-form {
         width: 100%;
