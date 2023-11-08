@@ -27,7 +27,7 @@
                 <button type="submit" class="bg-blue-500 text-white w-1/2 mx-auto h-8 rounded-md">Login</button>
             </form>
             <h1 id="login-account" class="text-blue-300 text-xl text-center font-bold mb-5 underline z-50 hidden ">Login My Account!</h1>
-        </div>
+        </div> 
        </div>
     </div>
     @include('layouts.script')
