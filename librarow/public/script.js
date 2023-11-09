@@ -1,17 +1,13 @@
-let isRegister = false;
-const classChange = document.getElementById('change_class');
+const jawirButton = document.getElementById('jawirButton');
+const jawirElement = document.querySelector('.jawir');
+const sirButton = document.getElementById('sirButton');
+const defaultColor = window.getComputedStyle(jawirElement, ':before').getPropertyValue('background-color');
+jawirButton.addEventListener('click', () => {
+  // Change the background color of the :before pseudo-element
+  const jawirStyle = document.styleSheets[0].addRule('.jawir::before', 'background-color: rgb(255, 255, 255)');
+});
 
-const bannerAnim = document.getElementById('banner_anim');
-
-classChanger = () => {
-    if (isRegister) {
-        // Remove the animation name by setting it to an empty string
-        
-        bannerAnim.style.backgroundImage = "url('./img/lib.jpg')";
-    } else {
-        // Change the animation name to "new-animation"
-
-        bannerAnim.style.animationName = "white"; // Reset the background image
-    }
-    isRegister = !isRegister; // Toggle the flag
-};
+sirButton.addEventListener('click', () => {
+    // Change the background color of the :before pseudo-element
+    const jawirStyle = document.styleSheets[0].addRule('.jawir::before', `background-color: ${defaultColor}`);
+    });

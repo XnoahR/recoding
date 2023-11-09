@@ -133,3 +133,15 @@
         
     }
 }
+
+.jawir{
+    @apply w-full h-5 bg-blue-300 text-red-400 ;    
+}
+.jawir::before{
+    @apply content-[''] w-full h-5 bg-blue-300 absolute top-0 left-0;
+}
+
+.element::before{
+    content: 'NEW';
+	color: rgb(255, 0, 0);
+}
