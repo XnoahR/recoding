@@ -587,6 +587,8 @@ video {
   position: absolute;
   bottom: 0px;
   width: 100%;
+  border-top-left-radius: 0.75rem;
+  border-bottom-left-radius: 0.75rem;
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
   transition-property: all;
@@ -612,7 +614,6 @@ video {
 /* Initially apply the "reg-banner" animation */
 
 .reg-banner::before {
-  animation-name: reg-banners-out;
   animation-duration: 2s;
   animation-fill-mode: forwards;
 }
@@ -778,6 +779,10 @@ video {
 
 .mb-1 {
   margin-bottom: 0.25rem;
+}
+
+.mb-12 {
+  margin-bottom: 3rem;
 }
 
 .mb-16 {
@@ -1611,11 +1616,6 @@ video {
   color: rgb(17 24 39 / var(--tw-text-opacity));
 }
 
-.text-red-500 {
-  --tw-text-opacity: 1;
-  color: rgb(239 68 68 / var(--tw-text-opacity));
-}
-
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
@@ -1672,6 +1672,14 @@ video {
 .shadow-gray-700 {
   --tw-shadow-color: #374151;
   --tw-shadow: var(--tw-shadow-colored);
+}
+
+.outline {
+  outline-style: solid;
+}
+
+.outline-white {
+  outline-color: #fff;
 }
 
 .ring-white {

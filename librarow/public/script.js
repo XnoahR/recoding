@@ -11,12 +11,13 @@
 //     // Change the background color of the :before pseudo-element
 //     const jawirStyle = document.styleSheets[0].addRule('.jawir::before', `background-color: ${defaultColor}`);
 //     });
-let regBannerCheck = false;
+let regBannerCheck = true;
 const registerBanner = document.getElementById('register-banner')
 const changeClass= document.getElementById('change-class')
 changeClass.addEventListener('click',()=>{
   if(!regBannerCheck){
-  const bgRemoval = document.styleSheets[0].addRule('.reg-banner::before', 'animation-name: reg-banners-in');
+  const bgRemoval = document.styleSheets[0].addRule('.reg-banner::before', 'animation-name: reg-banners-in'); 
+  
   }
   else{
     const bgRemoval = document.styleSheets[0].addRule('.reg-banner::before', 'animation-name: reg-banners-out');

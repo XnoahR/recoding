@@ -53,7 +53,7 @@
     }
 
     .reg-banner::before{
-        @apply content-[''] w-full  bg-white transition-all ease-linear duration-1000 absolute bottom-0  ;
+        @apply content-[''] w-full  bg-white transition-all ease-linear duration-1000 absolute bottom-0 rounded-l-xl ;
     }
     
    /* Define a new animation */
@@ -68,7 +68,7 @@
 
 /* Initially apply the "reg-banner" animation */
 .reg-banner::before {
-  animation-name: reg-banners-out;
+  
   animation-duration: 2s;
   animation-fill-mode: forwards;
 }
