@@ -13,14 +13,15 @@
 //     });
 let regBannerCheck = true;
 const registerBanner = document.getElementById('register-banner')
-const changeClass= document.getElementById('change-class')
-changeClass.addEventListener('click',()=>{
+const registerButton= document.getElementById('register-button')
+registerButton.addEventListener('click',()=>{
   if(!regBannerCheck){
   const bgRemoval = document.styleSheets[0].addRule('.reg-banner::before', 'animation-name: reg-banners-in'); 
   
   }
   else{
     const bgRemoval = document.styleSheets[0].addRule('.reg-banner::before', 'animation-name: reg-banners-out');
+    registerButton.classList.add('hidden');
   }
   regBannerCheck = !regBannerCheck;
 });

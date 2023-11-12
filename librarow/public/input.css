@@ -116,6 +116,7 @@
     @keyframes reg-banners-out{
         from{
             height: 0;
+            
         }
         to{
             height: 100%;
