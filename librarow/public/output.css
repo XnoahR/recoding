@@ -564,9 +564,40 @@ video {
         @apply ;
     } */
 
-/* .log-banner::before{
-        @apply content-[''] w-full  bg-white transition-all ease-linear duration-1000 absolute bottom-0 left-0;
-    } */
+.log-banner {
+  position: relative;
+  bottom: 0px;
+  left: 0px;
+  height: 0px;
+  width: 100%;
+  background-image: url('./img/lib.jpg');
+  background-size: cover;
+  background-position: center;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 1000ms;
+  transition-timing-function: linear;
+  --tw-content: '';
+  content: var(--tw-content);
+}
+
+.log-banner::before {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 1000ms;
+  transition-timing-function: linear;
+  --tw-content: '';
+  content: var(--tw-content);
+  animation-name: reg-banners-out;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
 
 .reg-banner {
   position: relative;

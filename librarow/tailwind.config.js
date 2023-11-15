@@ -10,7 +10,7 @@ export default {
         '150' : '37.5rem',
       },
       backgroundImage:{
-        'library': "url('./img/lib.jpg')",
+        'login': "url('./img/lib.jpg')",
         'register': "url('./img/reg.jpg')",
       }
     },

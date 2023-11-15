@@ -20,19 +20,14 @@
     
     
     .log-banner{
-        @apply content-[''] w-full h-0 bg-white relative bottom-0 left-0 transition-all ease-linear duration-1000 ;
+        @apply content-[''] w-full h-0 bg-login relative bottom-0 left-0 transition-all ease-linear duration-1000 bg-center bg-cover;
     }
 
-    /* .log-banner::before{
-        @apply content-[''] w-full  bg-white transition-all ease-linear duration-1000 absolute bottom-0 left-0;
-    } */
     .log-banner::before{
-        content: '';
-        width: 100%;
-        background-color: white;
-        position: absolute;
-        top: 0;
-        animation-name: log-banners;
+        @apply content-[''] w-full  bg-white transition-all ease-linear duration-1000 absolute bottom-0 left-0;
+    }
+    .log-banner::before{
+        animation-name: reg-banners-out;
         animation-duration: 2s;
         animation-fill-mode: forwards;
     }
@@ -41,16 +36,6 @@
         @apply content-[''] w-full h-0 bg-register relative bottom-0 left-0 transition-all ease-linear duration-1000 ;
     }
 
-    .log-banner::before{
-        content: '';
-        width: 100%;
-        background-color: white;
-        position: absolute;
-        top: 0;
-        animation-name: log-banners;
-        animation-duration: 2s;
-        animation-fill-mode: forwards;
-    }
 
     .reg-banner::before{
         @apply content-[''] w-full  bg-white transition-all ease-linear duration-1000 absolute bottom-0 rounded-l-xl ;

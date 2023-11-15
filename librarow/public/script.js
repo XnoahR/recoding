@@ -13,23 +13,67 @@
 //     });
 
 //Register Banner
-let regBannerCheck = true;
+let regBannerCheck = false;
 const registerBanner = document.getElementById('register-banner')
 const registerButton= document.getElementById('register-button')
 const registerForm = document.getElementById('register-form')
+
+//Login Banner
+let loginBannerCheck = true;
+const loginBanner = document.getElementById('login-banner')
+const loginButton = document.getElementById('login-button')
+const loginContent = document.getElementById('login-content')
+
+let loginMode = () => {
+}
+
+
 registerButton.addEventListener('click',()=>{
   if(!regBannerCheck){
-  const bgRemoval = document.styleSheets[0].addRule('.reg-banner::before', 'animation-name: reg-banners-in'); 
+  const registerBannerIn = document.styleSheets[0].addRule('.reg-banner::before', 'animation-name: reg-banners-out'); 
+  const LoginBannerOut = document.styleSheets[0].addRule('.log-banner::before', 'animation-name: reg-banners-in');
+  registerButton.classList.add('hidden');
+  registerBanner.classList.remove('justify-end');
+  registerBanner.classList.add('justify-center');
   
-  }
-  else{
-    const bgRemoval = document.styleSheets[0].addRule('.reg-banner::before', 'animation-name: reg-banners-out');
-    registerButton.classList.add('hidden');
-    registerBanner.classList.remove('justify-end');
-    registerBanner.classList.add('justify-center');
-    setTimeout(()=>{
-      registerForm.classList.remove('hidden');
-    }, 1250)
-  }
+  setTimeout(()=>{
+    registerForm.classList.remove('hidden');
+  }, 1250)
+  loginBannerCheck = !loginBannerCheck;
   regBannerCheck = !regBannerCheck;
+  }
 });
+
+loginButton.addEventListener('click',()=>{
+  if(!loginBannerCheck){
+  const loginBannerIn = document.styleSheets[0].addRule('.log-banner::before', 'animation-name: reg-banners-out'); 
+  const registerBannerOut = document.styleSheets[0].addRule('.reg-banner::before', 'animation-name: reg-banners-in');
+  loginButton.classList.add('hidden');
+  loginBanner.classList.remove('justify-end');
+  loginBanner.classList.add('justify-center');
+  setTimeout(()=>{
+    loginContent.classList.remove('hidden');
+  }, 1250)
+  loginBannerCheck = !loginBannerCheck;
+  regBannerCheck = !regBannerCheck;
+  }
+});
+
+
+
+// loginButton.addEventListener('click',()=>{
+//   if(!loginBannerCheck){
+//   const bgRemoval = document.styleSheets[0].addRule('.log-banner::before', 'animation-name: reg-banners-in'); 
+  
+//   }
+//   else{
+//     const bgRemoval = document.styleSheets[0].addRule('.log-banner::before', 'animation-name: reg-banners-out');
+//     loginButton.classList.add('hidden');
+//     loginBanner.classList.remove('justify-end');
+//     loginBanner.classList.add('justify-center');
+//     setTimeout(()=>{
+//       loginContent.classList.remove('hidden');
+//     }, 1250)
+//   }
+//   loginBannerCheck = !loginBannerCheck;
+// });
