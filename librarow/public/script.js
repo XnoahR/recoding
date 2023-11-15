@@ -11,9 +11,12 @@
 //     // Change the background color of the :before pseudo-element
 //     const jawirStyle = document.styleSheets[0].addRule('.jawir::before', `background-color: ${defaultColor}`);
 //     });
+
+//Register Banner
 let regBannerCheck = true;
 const registerBanner = document.getElementById('register-banner')
 const registerButton= document.getElementById('register-button')
+const registerForm = document.getElementById('register-form')
 registerButton.addEventListener('click',()=>{
   if(!regBannerCheck){
   const bgRemoval = document.styleSheets[0].addRule('.reg-banner::before', 'animation-name: reg-banners-in'); 
@@ -22,6 +25,11 @@ registerButton.addEventListener('click',()=>{
   else{
     const bgRemoval = document.styleSheets[0].addRule('.reg-banner::before', 'animation-name: reg-banners-out');
     registerButton.classList.add('hidden');
+    registerBanner.classList.remove('justify-end');
+    registerBanner.classList.add('justify-center');
+    setTimeout(()=>{
+      registerForm.classList.remove('hidden');
+    }, 1250)
   }
   regBannerCheck = !regBannerCheck;
 });

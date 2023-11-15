@@ -9,7 +9,7 @@
                 Register
             </h1>
 
-            <form action="" id="register-form" method="post" class="reg-form ">
+            <form action="" id="register-form" method="post" class="reg-form hidden">
                 <input type="email" name="email" id="" class="bg-gray-100 my-3 px-3 w-1/2 h-8 mx-auto border-l-8 border-blue-500">
                 <input type="password" name="password" id="" class="bg-gray-100 my-3 px-3 w-1/2 h-8 mx-auto border-l-8 border-blue-500">
                 <button type="submit" class="bg-blue-500 text-white w-1/2 mx-auto h-8 rounded-md">Login</button>
