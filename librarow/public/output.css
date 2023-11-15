@@ -664,6 +664,13 @@ video {
   animation-fill-mode: forwards;
 }
 
+.log-form {
+  z-index: 50;
+  animation-name: reg-come-in;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
 @keyframes reg-come-in {
   from {
     opacity: 0;

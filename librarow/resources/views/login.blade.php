@@ -25,9 +25,9 @@
            <h1 id="create-account" class="text-blue-300 text-xl text-center font-bold mb-5 underline z-50 ">Create an Account!</h1> --}}
             </div>
 
-            <div id="login-banner" class="h-full w-1/2  flex flex-col justif justify-center space-y-12  log-banner">
+            <div id="login-banner" class="h-full w-1/2  flex flex-col justif justify-center log-banner">
 
-                <div id="login-content" class="h-3/4 w-full flex flex-col space-y-12 border border-red-500">
+                <div id="login-content" class="h-3/4 w-full flex flex-col space-y-12 log-form">
                 <h2 id="login-header" class="text-xl font-semibold text-blue-500 text-center">Login Account</h2>
                 <p id="login-desc" class="text-sm text-center w-10/12 mx-auto">Lorem ipsum dolor sit amet consectetur
                     adipisicing elit. Aliquam, dolorum provident culpa asperiores molestiae cupiditate repellendus
@@ -41,7 +41,7 @@
                 </form>
             </div>
             <h1 id="login-button"
-            class="bg-blue-400 w-32 py-2 outline outline-white rounded-md text-center mx-auto mb-12 z-50 ">
+            class="bg-blue-400 w-32 py-2 outline outline-white rounded-md text-center mx-auto mb-12 hidden">
             Login
         </h1>
             </div>

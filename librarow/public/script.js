@@ -24,38 +24,51 @@ const loginBanner = document.getElementById('login-banner')
 const loginButton = document.getElementById('login-button')
 const loginContent = document.getElementById('login-content')
 
-let loginMode = () => {
-}
-
-
-registerButton.addEventListener('click',()=>{
-  if(!regBannerCheck){
-  const registerBannerIn = document.styleSheets[0].addRule('.reg-banner::before', 'animation-name: reg-banners-out'); 
-  const LoginBannerOut = document.styleSheets[0].addRule('.log-banner::before', 'animation-name: reg-banners-in');
-  registerButton.classList.add('hidden');
-  registerBanner.classList.remove('justify-end');
-  registerBanner.classList.add('justify-center');
-  
-  setTimeout(()=>{
-    registerForm.classList.remove('hidden');
-  }, 1250)
-  loginBannerCheck = !loginBannerCheck;
-  regBannerCheck = !regBannerCheck;
-  }
-});
-
-loginButton.addEventListener('click',()=>{
-  if(!loginBannerCheck){
+const loginMode = () => {
   const loginBannerIn = document.styleSheets[0].addRule('.log-banner::before', 'animation-name: reg-banners-out'); 
   const registerBannerOut = document.styleSheets[0].addRule('.reg-banner::before', 'animation-name: reg-banners-in');
   loginButton.classList.add('hidden');
   loginBanner.classList.remove('justify-end');
   loginBanner.classList.add('justify-center');
+  registerForm.classList.add('hidden');
+  registerBanner.classList.remove('justify-center');
+  registerBanner.classList.add('justify-end');
   setTimeout(()=>{
     loginContent.classList.remove('hidden');
+    registerButton.classList.remove('hidden');
   }, 1250)
   loginBannerCheck = !loginBannerCheck;
   regBannerCheck = !regBannerCheck;
+}
+
+const registerMode = () => {
+  const registerBannerIn = document.styleSheets[0].addRule('.reg-banner::before', 'animation-name: reg-banners-out'); 
+  const LoginBannerOut = document.styleSheets[0].addRule('.log-banner::before', 'animation-name: reg-banners-in');
+  registerButton.classList.add('hidden');
+  registerBanner.classList.remove('justify-end');
+  registerBanner.classList.add('justify-center');
+  loginContent.classList.add('hidden');
+  loginBanner.classList.remove('justify-center');
+  loginBanner.classList.add('justify-end');
+
+  setTimeout(()=>{
+    registerForm.classList.remove('hidden');
+    loginButton.classList.remove('hidden');
+  }, 1250)
+  loginBannerCheck = !loginBannerCheck;
+  regBannerCheck = !regBannerCheck;
+}
+
+
+registerButton.addEventListener('click',()=>{
+  if(!regBannerCheck){
+  registerMode();
+  }
+});
+
+loginButton.addEventListener('click',()=>{
+  if(!loginBannerCheck){
+    loginMode();
   }
 });
 
