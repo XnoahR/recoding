@@ -16,7 +16,7 @@
                         class="bg-gray-100 my-3 px-3 w-1/2 h-8 mx-auto border-l-8 border-blue-500">
                     <input type="password" name="password" id=""
                         class="bg-gray-100 my-3 px-3 w-1/2 h-8 mx-auto border-l-8 border-blue-500">
-                    <button type="submit" class="bg-blue-500 text-white w-1/2 mx-auto h-8 rounded-md">Login</button>
+                    <button type="submit" class="bg-blue-500 text-white w-1/2 mx-auto h-8 rounded-md">Register</button>
                 </form>
 
                 {{-- <img src="{{ asset("./img/lib.jpg") }}" alt="" class="w-full h-full object-cover contrast-75 rounded-l-xl">
