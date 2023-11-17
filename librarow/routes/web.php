@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\loginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,8 +36,14 @@ Route::get('/data-mahasiswa',function(){return view('admin.data_mahasiswa');})->
 Route::get('/data-admin',function(){return view('admin.data_admin');})->name('data-admin');
 Route::get('/data-buku',function(){return view('admin.data_buku');})->name('data-buku');
 
+// Route::middleware(['isLogin'])->group(function(){
+//     Route::get('/login', [loginController::class,'index'])->name('login-page');
+//     Route::post('/login', [loginController::class,'authenticate'])->name('login-auth');
+//     Route::get('/login', [loginController::class,'register'])->name('register');
+//     Route::post('/login', [loginController::class,'store'])->name('register-store');
+// });
+Route::get('/login', [loginController::class,'index'])->name('login-page');
+Route::post('/login', [loginController::class,'authenticate'])->name('login-auth');
+Route::post('/register', [loginController::class,'store'])->name('register');
 
-
-Route::get('/test', function(){
-    return view('test');
-});
+Route::get('/test', [loginController::class,'index'])->name('test');

@@ -11,7 +11,10 @@
                     Register
                 </h1>
 
-                <form action="" id="register-form" method="post" class="reg-form hidden">
+                <form action="{{ route('register') }}" id="register-form" method="POST" class="reg-form hidden">
+                    @csrf
+                    <input type="text" name="name" id=""
+                    class="bg-gray-100 my-3 px-3 w-1/2 h-8 mx-auto border-l-8 border-blue-500">
                     <input type="email" name="email" id=""
                         class="bg-gray-100 my-3 px-3 w-1/2 h-8 mx-auto border-l-8 border-blue-500">
                     <input type="password" name="password" id=""
@@ -32,7 +35,8 @@
                 <p id="login-desc" class="text-sm text-center w-10/12 mx-auto">Lorem ipsum dolor sit amet consectetur
                     adipisicing elit. Aliquam, dolorum provident culpa asperiores molestiae cupiditate repellendus
                     libero molestias architecto consequatur.</p>
-                <form id="login-form" action="" method="post" class="w-full mx-auto flex justify-center flex-col">
+                <form id="login-form" action="{{ route('login-auth') }}" method="post" class="w-full mx-auto flex justify-center flex-col">
+                    @csrf
                     <input type="email" name="email" id=""
                         class="bg-gray-100 my-3 px-3 w-1/2 h-8 mx-auto border-l-8 border-blue-500">
                     <input type="password" name="password" id=""
