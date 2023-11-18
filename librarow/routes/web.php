@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\bookController;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\loginController;
@@ -27,7 +28,7 @@ Route::get('/login',function(){return view('login');})->name('login');
 
 Route::get('/categories',function(){return view('categories');})->name('categories');
 Route::get('/categories/list',function(){return view('list');})->name('book-categories');
-Route::get('/borrow',function(){return view('user.borrow_book');})->name('borrow');
+Route::get('/borrow/{id}',[bookController::class,'index'])->name('borrow');
 Route::get('/profile',function(){return view('user.profile');})->name('profile');
 Route::get('/profile/edit',function(){return view('user.edit_profile');})->name('profile-edit');
 
