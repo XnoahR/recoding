@@ -3,10 +3,10 @@
 @include('layouts.head')
 
 
-@if (session('status'))
+@if (session('Success'))
     {{-- pop up and dissapear--}}
     <div class="bg-green-500 text-white text-center py-3">
-        {{ session('status') }}
+        {{ session('Success') }}
 @endif
 @if (session('loginError'))
     <div class="bg-red-500 text-white text-center py-3">
