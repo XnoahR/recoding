@@ -2,6 +2,18 @@
 <html lang="en">
 @include('layouts.head')
 
+
+@if (session('status'))
+    {{-- pop up and dissapear--}}
+    <div class="bg-green-500 text-white text-center py-3">
+        {{ session('status') }}
+@endif
+@if (session('loginError'))
+    <div class="bg-red-500 text-white text-center py-3">
+        {{ session('loginError') }}
+    </div>
+@endif
+
 <body class="bg-gradient-to-br from-cyan-600 to-blue-500 bg-no-repeat">
     <div class="w-full h-screen flex items-center justify-center">
         <div class="w-2/3 h-5/6 bg-white rounded-xl flex ">
@@ -37,7 +49,7 @@
                     libero molestias architecto consequatur.</p>
                 <form id="login-form" action="{{ route('login-auth') }}" method="post" class="w-full mx-auto flex justify-center flex-col">
                     @csrf
-                    <input type="email" name="email" id=""
+                    <input type="email" name="email" value="{{ Session::get('email') }}" id=""
                         class="bg-gray-100 my-3 px-3 w-1/2 h-8 mx-auto border-l-8 border-blue-500">
                     <input type="password" name="password" id=""
                         class="bg-gray-100 my-3 px-3 w-1/2 h-8 mx-auto border-l-8 border-blue-500">
