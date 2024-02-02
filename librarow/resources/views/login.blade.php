@@ -5,7 +5,7 @@
 <body class="bg-gradient-to-br from-cyan-600 to-blue-500 bg-no-repeat">
     <div class="w-full h-screen flex items-center justify-center">
         <div class="w-2/3 h-5/6 bg-white rounded-xl flex ">
-            <div id="register-banner" class="h-full w-1/2 border border-red-500 rounded-l-xl flex flex-col justify-end reg-banner"">
+            <div id="register-banner" class="h-full w-1/2  rounded-l-xl flex flex-col justify-end reg-banner"">
                 <h1 id="register-button"
                     class="bg-blue-400 w-32 py-2 outline outline-white rounded-md text-center mx-auto mb-12 z-50">
                     Register

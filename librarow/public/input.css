@@ -20,11 +20,11 @@
     
     
     .log-banner{
-        @apply content-[''] w-full h-0 bg-login relative bottom-0 left-0 transition-all ease-linear duration-1000 bg-center bg-cover;
+        @apply content-[''] w-full h-0 bg-login relative bottom-0 left-0 transition-all ease-linear duration-1000 bg-center bg-cover rounded-r-md;
     }
 
     .log-banner::before{
-        @apply content-[''] w-full  bg-white transition-all ease-linear duration-1000 absolute bottom-0 left-0;
+        @apply content-[''] w-full  bg-white transition-all ease-linear duration-1000 absolute bottom-0 left-0 rounded-r-md;
     }
     .log-banner::before{
         animation-name: reg-banners-out;
@@ -126,12 +126,6 @@
     }
 }
 
-.jawir{
-    @apply w-full h-5 bg-blue-300 text-red-400 ;    
-}
-.jawir::before{
-    @apply content-[''] w-full h-5 bg-blue-300 absolute top-0 left-0;
-}
 
 .element::before{
     content: 'NEW';
