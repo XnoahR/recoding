@@ -44,24 +44,24 @@ class loginController extends Controller
 
     public function store(Request $request)
     {
-        Session::flash('register_email', $request->register_email,);   
-        Session::flash('register_name', $request->register_name);
+        Session::flash('email', $request->email,);   
+        Session::flash('name', $request->name);
         $credential = $request->validate([
-            'register_name' => ['required'],
-            'register_email' => ['required', 'email'],
-            'register_password' => ['required', 'min:6'],
+            'name' => ['required'],
+            'email' => ['required', 'email'],
+            'password' => ['required', 'min:6'],
         ], [
-            'register_name.required' => 'Name is required',
-            'register_email.required' => 'Email is required',
-            'register_email.email' => 'Email is not valid',
-            'register_password.required' => 'Password is required',
-            'register_password.min' => 'Password must be at least 6 characters', 
+            'name.required' => 'Name is required',
+            'email.required' => 'Email is required',
+            'email.email' => 'Email is not valid',
+            'password.required' => 'Password is required',
+            'password.min' => 'Password must be at least 6 characters', 
         ]);
 
         $users = new User;
-        $users->name = $credential['register_name'];
-        $users->email = $credential['register_email'];
-        $users->password = bcrypt($credential['register_password']);
+        $users->name = $credential['name'];
+        $users->email = $credential['email'];
+        $users->password = bcrypt($credential['password']);
         $users->role_id = 2;
         $users->save();
 
@@ -70,5 +70,11 @@ class loginController extends Controller
         } else {
             return redirect()->intended('login')->withErrors('Register failed, please check your email and password again.');
         }
+    }
+
+    public function logout()
+    {
+        Auth::logout();
+        return redirect('login')->with('Success', 'Logout success');
     }
 }

@@ -9,7 +9,7 @@
                 <li><a href="/home">Home</a></li>
                 <li><a href="/categories">Categories</a></li>
                 <li><a href="/profile">Profile</a></li>
-                <li>Logout</li>
+                <li><a href="/logout">Logout</a></li>
             </ul>
         </div>
     </div>

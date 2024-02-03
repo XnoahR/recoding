@@ -3,18 +3,24 @@
 @include('layouts.head')
 
 
-@if (session('Success'))
+@if (Session::get('Success'))
     {{-- pop up and dissapear--}}
-    <div class="bg-green-500 text-white text-center py-3">
-        {{ session('Success') }}
+    <p class="flex justify-center mx-auto w-64 h-16 items-center p-4 mb-4 text-sm text-green-800 border border-green-300 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400 dark:border-green-800 ">
+        {{ Session::get('Success') }}  
+    </p>
 @endif
 @if($errors->any())
-    <div class="bg-red-500 text-white text-center py-3">
-        @foreach ($errors->all() as $error)
-            <p>{{ $error }}</p>
-        @endforeach
-    </div>
+    @foreach ($errors->all() as $error)
+       {{-- @include('components.alert')
+       @section('alert')
+       <p>{{ $error }}</p>
+        @endsection --}}
+        <p class="flex justify-center mx-auto w-64 h-16 items-center p-4 mb-4 text-sm text-red-800 border border-red-300 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400 dark:border-red-800 ">
+            {{ $error }}
+        </p>
+    @endforeach
 @endif
+</div>
 
 <body class="bg-gradient-to-br from-cyan-600 to-blue-500 bg-no-repeat">
     <div class="w-full h-screen flex items-center justify-center">
@@ -27,11 +33,11 @@
 
                 <form action="{{ route('register') }}" id="register-form" method="POST" class="reg-form hidden">
                     @csrf
-                    <input type="text" name="register_name" id="" value="{{ Session::get('register_name') }} "    
+                    <input type="text" name="name" id="" value="{{ Session::get('name') }} "    
                     class="bg-gray-100 my-3 px-3 w-1/2 h-8 mx-auto border-l-8 border-blue-500">
-                    <input type="email" name="register_email" id="" value="{{ Session::get('register_email') }}"
+                    <input type="email" name="email" id="" value="{{ Session::get('email') }}"
                         class="bg-gray-100 my-3 px-3 w-1/2 h-8 mx-auto border-l-8 border-blue-500">
-                    <input type="password" name="register_password" id=""
+                    <input type="password" name="password" id=""
                         class="bg-gray-100 my-3 px-3 w-1/2 h-8 mx-auto border-l-8 border-blue-500">
                     <button type="submit" class="bg-blue-500 text-white w-1/2 mx-auto h-8 rounded-md">Register</button>
                 </form>

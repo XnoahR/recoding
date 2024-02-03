@@ -46,5 +46,6 @@ Route::get('/data-buku',function(){return view('admin.data_buku');})->name('data
 Route::get('/login', [loginController::class,'index'])->name('login-page');
 Route::post('/login', [loginController::class,'authenticate'])->name('login-auth');
 Route::post('/register', [loginController::class,'store'])->name('register');
+Route::get('/logout',[loginController::class,'logout'])->name('logout');
 
 Route::get('/test', [loginController::class,'index'])->name('test');
