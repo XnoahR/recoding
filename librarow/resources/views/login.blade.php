@@ -8,9 +8,11 @@
     <div class="bg-green-500 text-white text-center py-3">
         {{ session('Success') }}
 @endif
-@if (session('loginError'))
+@if($errors->any())
     <div class="bg-red-500 text-white text-center py-3">
-        {{ session('loginError') }}
+        @foreach ($errors->all() as $error)
+            <p>{{ $error }}</p>
+        @endforeach
     </div>
 @endif
 
@@ -25,11 +27,11 @@
 
                 <form action="{{ route('register') }}" id="register-form" method="POST" class="reg-form hidden">
                     @csrf
-                    <input type="text" name="name" id=""
+                    <input type="text" name="register_name" id="" value="{{ Session::get('register_name') }} "    
                     class="bg-gray-100 my-3 px-3 w-1/2 h-8 mx-auto border-l-8 border-blue-500">
-                    <input type="email" name="email" id=""
+                    <input type="email" name="register_email" id="" value="{{ Session::get('register_email') }}"
                         class="bg-gray-100 my-3 px-3 w-1/2 h-8 mx-auto border-l-8 border-blue-500">
-                    <input type="password" name="password" id=""
+                    <input type="password" name="register_password" id=""
                         class="bg-gray-100 my-3 px-3 w-1/2 h-8 mx-auto border-l-8 border-blue-500">
                     <button type="submit" class="bg-blue-500 text-white w-1/2 mx-auto h-8 rounded-md">Register</button>
                 </form>
