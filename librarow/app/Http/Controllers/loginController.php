@@ -38,7 +38,7 @@ class loginController extends Controller
                 return redirect()->intended('home')->with('Success', 'login user success');
             }
         } else {
-            return back()->with('error', 'Login failed, please check your email and password again.');
+            return redirect('login')->withErrors('Login failed, please check your email and password again.');
         }
     }
 
