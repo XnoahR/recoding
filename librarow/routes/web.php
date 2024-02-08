@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\adminController;
 use App\Http\Controllers\bookController;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
@@ -32,10 +33,10 @@ Route::get('/borrow/{id}',[bookController::class,'index'])->name('borrow');
 Route::get('/profile',function(){return view('user.profile');})->name('profile');
 Route::get('/profile/edit',function(){return view('user.edit_profile');})->name('profile-edit');
 
-Route::get('/admin',function(){return view('admin.dashboard');})->name('admin');
-Route::get('/data-mahasiswa',function(){return view('admin.data_mahasiswa');})->name('data-mahasiswa');
-Route::get('/data-admin',function(){return view('admin.data_admin');})->name('data-admin');
-Route::get('/data-buku',function(){return view('admin.data_buku');})->name('data-buku');
+Route::get('/admin',[adminController::class,'index'])->name('admin');
+Route::get('/data-mahasiswa',[adminController::class,'data_mahasiswa'])->name('data-mahasiswa');
+Route::get('/data-admin',[adminController::class,'data_admin'])->name('data-admin');
+Route::get('/data-buku',[adminController::class,'data_buku'])->name('data-buku');
 
 // Route::middleware(['isLogin'])->group(function(){
 //     Route::get('/login', [loginController::class,'index'])->name('login-page');

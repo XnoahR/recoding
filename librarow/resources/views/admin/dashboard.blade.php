@@ -2,6 +2,7 @@
 @section('main')
     <section class="h-3/4-screen w-full grid grid-cols-12  ">
         <div class="col-span-10 col-start-2 grid grid-cols-4 gap-6   content-center">
+            
             <div
                 class="flex flex-col justify-around h-72 border  rounded-lg shadow-md shadow-blue-400 ease-in duration-200 hover:-translate-y-2 hover:bg-blue-100 ">
                 <img src="{{ asset('./img/mahasiswa.png') }}" alt="" class="w-48 mx-auto">
