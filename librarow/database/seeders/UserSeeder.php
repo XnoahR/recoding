@@ -50,6 +50,12 @@ class UserSeeder extends Seeder
             'role_id' => 2,
             'status_id' => 1,
         ]);
+          DB::table('users')->insert([
+            'name' => 'admin',
+            'email' => 'admin@admin.com',
+            'password' => Hash::make('admin'),
+            'role_id' => 1,
+        ]);
 
     }
 }

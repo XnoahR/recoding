@@ -13,35 +13,19 @@
                 <th class="border border-black w-2/12">Foto</th>
                 <th class="border border-black w-2/12">Nama</th>
                 <th class="border border-black w-2/12">Email</th>
-                <th class="border border-black w-2/12">Username</th>
-                <th class="border border-black w-2/12">Password</th>
+                <th class="border border-black w-2/12">phone</th>
             
                </thead>
                <tr class="h-10 max-h-16">
-                     <td class="border border-blue-300">1</td>
-                     <td class="border border-blue-300">x.jpg</td>
-                     <td class="border border-blue-300">Ray</td>
-                     <td class="border border-blue-300">bata@gmail.acx</td>
-                     <td class="border border-blue-300">admin</td>
-                    <td class="border border-blue-300">admin</td>
+                <?php $i = 1; ?>
+                    @foreach ($admin as $adm)
+                    <td class="border border-blue-300"><?=$i?></td>
+                    <td class="border border-blue-300">{{ $adm->picture }}</td>
+                    <td class="border border-blue-300">{{ $adm->name }}</td>
+                    <td class="border border-blue-300">{{ $adm->email }}</td>
+                    <td class="border border-blue-300">{{ $adm->phone }}</td>
+                    @endforeach
                </tr>
-               <tr class="h-10 max-h-16">
-                     <td class="border border-blue-300">1</td>
-                     <td class="border border-blue-300">x.jpg</td>
-                     <td class="border border-blue-300">Ray</td>
-                     <td class="border border-blue-300">bata@gmail.acx</td>
-                     <td class="border border-blue-300">admin</td>
-                    <td class="border border-blue-300">admin</td>
-               </tr>
-               <tr class="h-10 max-h-16">
-                     <td class="border border-blue-300">1</td>
-                     <td class="border border-blue-300">x.jpg</td>
-                     <td class="border border-blue-300">Ray</td>
-                     <td class="border border-blue-300">bata@gmail.acx</td>
-                     <td class="border border-blue-300">admin</td>
-                    <td class="border border-blue-300">admin</td>
-               </tr>
-              
             
             </table>
        </div>

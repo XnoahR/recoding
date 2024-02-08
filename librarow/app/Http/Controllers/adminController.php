@@ -24,8 +24,11 @@ class adminController extends Controller
     }
     public function data_admin()
     {
+        $admin = User::all()
+            ->where('role_id','1'); 
         return view('admin.data_admin', [
-            'title' => 'Data Admin'
+            'title' => 'Data Admin',
+            'admin' => $admin
         ]);
     }
     public function data_buku()
