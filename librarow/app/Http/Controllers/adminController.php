@@ -14,28 +14,28 @@ class adminController extends Controller
             'title' => 'Admin'
         ]);
     }
-    public function data_mahasiswa()
+    public function student_data()
     {
         $users = User::all()
             ->where('role_id','2');
-        return view('admin.data_mahasiswa', [
+        return view('admin.student_data', [
             'title' => 'Data Mahasiswa',
             'users' => $users
         ]);
     }
-    public function data_admin()
+    public function librarian_data()
     {
         $admin = User::all()
             ->where('role_id','1'); 
-        return view('admin.data_admin', [
+        return view('admin.librarian_data', [
             'title' => 'Data Admin',
             'admin' => $admin
         ]);
     }
-    public function data_buku()
+    public function book_data()
     {
         $books = book::all();
-        return view('admin.data_buku', [
+        return view('admin.book_data', [
             'title' => 'Data Buku',
             'books' => $books
         ]);

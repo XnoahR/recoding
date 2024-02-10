@@ -34,9 +34,10 @@ Route::get('/profile',function(){return view('user.profile');})->name('profile')
 Route::get('/profile/edit',function(){return view('user.edit_profile');})->name('profile-edit');
 
 Route::get('/admin',[adminController::class,'index'])->name('admin');
-Route::get('/data-mahasiswa',[adminController::class,'data_mahasiswa'])->name('data-mahasiswa');
-Route::get('/data-admin',[adminController::class,'data_admin'])->name('data-admin');
-Route::get('/data-buku',[adminController::class,'data_buku'])->name('data-buku');
+Route::get('/admin/student',[adminController::class,'student_data'])->name('student-data');
+Route::get('/admin/librarian',[adminController::class,'librarian_data'])->name('librarian-data');
+Route::get('/admin/book',[adminController::class,'book_data'])->name('book-data');
+Route::get('/admin/book/edit/{id}',[adminController::class,'book_edit'])->name('book-edit');
 
 // Route::middleware(['isLogin'])->group(function(){
 //     Route::get('/login', [loginController::class,'index'])->name('login-page');
