@@ -40,4 +40,13 @@ class adminController extends Controller
             'books' => $books
         ]);
     }
+    public function book_edit($id){
+        $book = book::where('id', $id)->get();
+        return view('admin.book_edit', 
+        [
+            'title' => 'Edit Buku',
+            'book' => $book
+        ]
+    );
+    }
 }

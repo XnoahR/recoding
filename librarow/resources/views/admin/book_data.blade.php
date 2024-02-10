@@ -32,7 +32,7 @@
                    <td class="border border-blue-300">{{ $book->author }}</td>
                    <td class="border border-blue-300">{{ $book->category }}</td>
                    <td class="border border-blue-300">
-                       <button class="bg-blue-500 text-white px-2 py-1 rounded-lg ">Edit</button>
+                     <a href="{{ route('book-edit',$book->id) }}"><button class="bg-blue-500 text-white px-2 py-1 rounded-lg ">Edit</button></a> 
                        <button class="bg-red-500 text-white px-2 py-1 rounded-lg ">Delete</button>
                     </td>
                     <?php $i++?>
