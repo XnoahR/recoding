@@ -21,18 +21,23 @@
                 <th class="border border-black w-2/12">Aksi</th>    
             
                </thead>
+               <?php $i=1?>
+               @foreach ($books as $book)
                <tr class="h-10 ">
-                        <td class="border border-blue-300">1</td>
-                        <td class="border border-blue-300"><img src="{{ asset("./img/comic.jpg") }}" alt="" class="h-24 mx-auto"></td>
-                        <td class="border border-blue-300">Spiderman</td>
-                        <td class="border border-blue-300">3</td>
-                        <td class="border border-blue-300">Marvel</td>
-                        <td class="border border-blue-300">Action</td>
-                        <td class="border border-blue-300">
-                            <button class="bg-blue-500 text-white px-2 py-1 rounded-lg ">Edit</button>
-                            <button class="bg-red-500 text-white px-2 py-1 rounded-lg ">Delete</button>
-                        </td>
+                   <td class="border border-blue-300"> <?=$i?></td>
+                   <td class="border border-blue-300"><img src="{{ asset("./img/" . $book->cover) }}" alt="" class="h-24 mx-auto"></td> 
+                   {{-- //New Knowledge --}}
+                   <td class="border border-blue-300">{{ $book->title }}</td>
+                   <td class="border border-blue-300">{{ $book->available }}</td>
+                   <td class="border border-blue-300">{{ $book->author }}</td>
+                   <td class="border border-blue-300">{{ $book->category }}</td>
+                   <td class="border border-blue-300">
+                       <button class="bg-blue-500 text-white px-2 py-1 rounded-lg ">Edit</button>
+                       <button class="bg-red-500 text-white px-2 py-1 rounded-lg ">Delete</button>
+                    </td>
+                    <?php $i++?>
                 </tr>
+               @endforeach
               
             
             </table>

@@ -13,8 +13,11 @@ class bookController extends Controller
         $book = book::where('id', $id)->get();
 
         return view('user.borrow_book',[
+            'title' => 'Borrow Buku',
             'book' => $book
         ]);
     }
+
+    
 
 }

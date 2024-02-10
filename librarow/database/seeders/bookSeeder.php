@@ -15,11 +15,41 @@ class bookSeeder extends Seeder
     {
         //
         DB::table('book')->insert([
-            'title' => 'Buku 1',
-            'author' => 'Ray',
-            'available' => '1',
-            'cover' => '1.jpg',
-            'category' => 'comic',
+            'title' => 'December',
+            'author' => 'Neck Deep',
+            'available' => '4',
+            'cover' => '648908c086017.jpg',
+            'category' => 'biography',
+            'created_at' => date('Y-m-d H:i:s'),
+            'updated_at' => date('Y-m-d H:i:s'),
+        ]);
+
+        DB::table('book')->insert([
+            'title' => 'Wake Me Up When September Ends',
+            'author' => 'Green Day',
+            'available' => '10',
+            'cover' => '6489086b46d89.jpg',
+            'category' => 'biography',
+            'created_at' => date('Y-m-d H:i:s'),
+            'updated_at' => date('Y-m-d H:i:s'),
+        ]);
+
+        DB::table('book')->insert([
+            'title' => 'Bored to Death',
+            'author' => 'Blink 182',
+            'available' => '7',
+            'cover' => '6489083003283.jpg',
+            'category' => 'horror',
+            'created_at' => date('Y-m-d H:i:s'),
+            'updated_at' => date('Y-m-d H:i:s'),
+        ]);
+
+        DB::table('book')->insert([
+            'title' => 'Together For the Kids',
+            'author' => 'Blink 182',
+            'available' => '4',
+            'cover' => '6489083629f7b.jpg',
+            'category' => 'drama',
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s'),
         ]);
