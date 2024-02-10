@@ -33,11 +33,13 @@ Route::get('/borrow/{id}',[bookController::class,'index'])->name('borrow');
 Route::get('/profile',function(){return view('user.profile');})->name('profile');
 Route::get('/profile/edit',function(){return view('user.edit_profile');})->name('profile-edit');
 
-Route::get('/admin',[adminController::class,'index'])->name('admin');
-Route::get('/admin/student',[adminController::class,'student_data'])->name('student-data');
-Route::get('/admin/librarian',[adminController::class,'librarian_data'])->name('librarian-data');
-Route::get('/admin/book',[adminController::class,'book_data'])->name('book-data');
-Route::get('/admin/book/edit/{id}',[adminController::class,'book_edit'])->name('book-edit');
+Route::prefix('admin')->group(function(){
+    Route::get('/',[adminController::class,'index'])->name('admin');
+    Route::get('/student',[adminController::class,'student_data'])->name('student-data');
+    Route::get('/librarian',[adminController::class,'librarian_data'])->name('librarian-data');
+    Route::get('/book',[adminController::class,'book_data'])->name('book-data');
+    Route::get('/book/edit/{id}',[adminController::class,'book_edit'])->name('book-edit');
+});
 
 // Route::middleware(['isLogin'])->group(function(){
 //     Route::get('/login', [loginController::class,'index'])->name('login-page');
