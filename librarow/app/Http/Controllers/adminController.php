@@ -80,6 +80,11 @@ class adminController extends Controller
         $book->save();
 
         return redirect(route('book-data'))->with('success', 'Data Buku Berhasil Diubah');
-      
+    }
+
+    public function book_delete($id){
+        $book = book::find($id);
+        $book->delete();
+        return redirect(route('book-data'))->with('success', 'Data Buku Berhasil Dihapus');
     }
 }

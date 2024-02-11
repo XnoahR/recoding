@@ -40,6 +40,7 @@ Route::prefix('admin')->group(function(){
     Route::get('/book',[adminController::class,'book_data'])->name('book-data');
     Route::get('/book/edit/{id}',[adminController::class,'book_edit'])->name('book-edit');
     Route::patch('/book/update/{id}',[adminController::class,'book_update'])->name('book-update');
+    Route::delete('/book/delete/{id}',[adminController::class,'book_delete'])->name('book-delete');
 });
 
 // Route::middleware(['isLogin'])->group(function(){

@@ -33,7 +33,11 @@
                    <td class="border border-blue-300">{{ $book->category }}</td>
                    <td class="border border-blue-300">
                      <a href="{{ route('book-edit',$book->id) }}"><button class="bg-blue-500 text-white px-2 py-1 rounded-lg ">Edit</button></a> 
-                       <button class="bg-red-500 text-white px-2 py-1 rounded-lg ">Delete</button>
+                     <form action="{{ route('book-delete', $book->id) }}" method="POST" style="display: inline;">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="bg-red-500 text-white px-2 py-1 rounded-lg">Delete</button>
+                    </form> 
                     </td>
                     <?php $i++?>
                 </tr>
