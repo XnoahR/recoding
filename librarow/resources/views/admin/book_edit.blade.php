@@ -12,9 +12,9 @@
                 <div class="h-full w-7/12 bg-blue-50 ">
                     
 
-                    <form action="{{ route('book-data',) }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('book-update',$book->id) }}" method="POST" enctype="multipart/form-data">
                         @csrf
-                        @method('PUT')
+                        @method('PATCH')
                         <ul class="my-24">
                             <li class="text-left ms-4 mb-2">
                                 <label for="title" class="ms-3 text-blue-500 font-bold">Judul</label><br>
@@ -25,8 +25,15 @@
                             <input type="text" name="author" id="" value="{{ $book->author }}" class="w-11/12 border border-blue-500 border-opacity-60 rounded-xl ms-2 py-1 px-4 mt-2">
                         </li>
                         <li class="text-left ms-4 mb-2">
+                             {{-- radio Category --}}
                             <label for="category" class="ms-3 text-blue-500 font-bold">Kategori</label><br>
-                            <input type="text" name="category" id="" value="{{ $book->category }}" class="w-11/12 border border-blue-500 border-opacity-60 rounded-xl ms-2 py-1 px-4 mt-2">
+                            <select name="category" id="" class="w-11/12 border border-blue-500 border-opacity-60 rounded-xl ms-2 py-1 px-4 mt-2">
+                                <option value="comic" {{ $book->category == 'comic' ? 'selected' : '' }}>Comic</option>
+                                <option value="drama" {{ $book->category == 'drama' ? 'selected' : '' }}>Drama</option>
+                                <option value="romance" {{ $book->category == 'romance' ? 'selected' : '' }}>Romance</option>
+                                <option value="biography" {{ $book->category == 'biography' ? 'selected' : '' }}>Biography</option>
+                                <option value="socio" {{ $book->category == 'socio' ? 'selected' : '' }}>Socio</option>
+                            </select>
                         </li>
                         <li class="text-left ms-4 mb-2">
                             <label for="available" class="ms-3 text-blue-500 font-bold">Ketersediaan</label><br>

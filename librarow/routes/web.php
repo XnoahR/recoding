@@ -39,6 +39,7 @@ Route::prefix('admin')->group(function(){
     Route::get('/librarian',[adminController::class,'librarian_data'])->name('librarian-data');
     Route::get('/book',[adminController::class,'book_data'])->name('book-data');
     Route::get('/book/edit/{id}',[adminController::class,'book_edit'])->name('book-edit');
+    Route::patch('/book/update/{id}',[adminController::class,'book_update'])->name('book-update');
 });
 
 // Route::middleware(['isLogin'])->group(function(){
