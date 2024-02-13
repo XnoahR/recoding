@@ -55,3 +55,4 @@ Route::post('/register', [loginController::class,'store'])->name('register');
 Route::get('/logout',[loginController::class,'logout'])->name('logout');
 
 Route::get('/test', [loginController::class,'index'])->name('test');
+Route::get('/modal',function(){return view('layouts.modal',['title' => 'A']);})->name('modal');
