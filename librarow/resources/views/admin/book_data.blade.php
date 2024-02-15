@@ -1,66 +1,141 @@
 @extends('layouts.main')
 @section('main')
-    <section class="w-3/4 h-screen border border-blue-500 shadow-lg border-opacity-50 rounded-lg mx-auto my-8 p-3">
-       <div class="w-full h-1/6">
-        <h2 class="text-blue-500 font-bold text-xl ms-3">Data Buku</h2>
-        <input type="search" name="caribuku" id="caribuku" placeholder="Cari Buku" class="w-64 ms-3 px-1 py-1 focus:outline-blue-500"> 
-        <button type="submit" class="bg-white border border-blue-500 rounded-lg px-5 py-1 mt-3">Cari</button>
-        <br>
-        <a href=""><button type="submit" class="bg-blue-500 text-white rounded-lg px-4 py-1 ms-3 mt-2">Tambah Buku</button></a>
+   
 
-       </div>
-       <div class="w-full h-4/6 text-center">
+    <section class="w-3/4 h-screen border border-blue-500 shadow-lg border-opacity-50 rounded-lg mx-auto my-8 p-3">
+        <div class="w-full h-1/6">
+            <h2 class="text-blue-500 font-bold text-xl ms-3">Data Buku</h2>
+            <input type="search" name="caribuku" id="caribuku" placeholder="Cari Buku"
+                class="w-64 ms-3 px-1 py-1 focus:outline-blue-500">
+            <button type="submit" class="bg-white border border-blue-500 rounded-lg px-5 py-1 mt-3">Cari</button>
+            <br>
+            <button class="bg-blue-500 text-white rounded-lg px-4 py-1 ms-3 mt-2 showModal">Tambah Buku</button>
+
+        </div>
+        <div class="w-full h-4/6 text-center">
             <table class="table-auto w-full border border-blue-300">
-               <thead class="border border-black bg-blue-300">
-                <th class="border border-black w-1/12">No</th>
-                <th class="border border-black w-2/12">Sampul</th>
-                <th class="border border-black w-3/12">Judul</th>
-                <th class="border border-black w-1/12">Ketersediaan</th>
-                <th class="border border-black w-2/12">Pengarang</th>
-                <th class="border border-black w-1/12">Kategori</th>
-                <th class="border border-black w-2/12">Aksi</th>    
-            
-               </thead>
-               <?php $i=1?>
-               @foreach ($books as $book)
-               <tr class="h-10 ">
-                   <td class="border border-blue-300"> <?=$i?></td>
-                   <td class="border border-blue-300"><img src="{{ asset("./img/" . $book->cover) }}" alt="" class="h-24 mx-auto"></td> 
-                   {{-- //New Knowledge --}}
-                   <td class="border border-blue-300">{{ $book->title }}</td>
-                   <td class="border border-blue-300">{{ $book->available }}</td>
-                   <td class="border border-blue-300">{{ $book->author }}</td>
-                   <td class="border border-blue-300">{{ $book->category }}</td>
-                   <td class="border border-blue-300">
-                     <a href="{{ route('book-edit',$book->id) }}"><button class="bg-blue-500 text-white px-2 py-1 rounded-lg ">Edit</button></a> 
-                     <form action="{{ route('book-delete', $book->id) }}" method="POST" style="display: inline;">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" class="bg-red-500 text-white px-2 py-1 rounded-lg">Delete</button>
-                    </form> 
-                    </td>
-                    <?php $i++?>
-                </tr>
-               @endforeach
-              
-            
+                <thead class="border border-black bg-blue-300">
+                    <th class="border border-black w-1/12">No</th>
+                    <th class="border border-black w-2/12">Sampul</th>
+                    <th class="border border-black w-3/12">Judul</th>
+                    <th class="border border-black w-1/12">Ketersediaan</th>
+                    <th class="border border-black w-2/12">Pengarang</th>
+                    <th class="border border-black w-1/12">Kategori</th>
+                    <th class="border border-black w-2/12">Aksi</th>
+
+                </thead>
+                <?php $i = 1; ?>
+                @foreach ($books as $book)
+                    <tr class="h-10 ">
+                        <td class="border border-blue-300"> <?= $i ?></td>
+                        <td class="border border-blue-300"><img src="{{ asset('./img/' . $book->cover) }}" alt=""
+                                class="h-24 mx-auto"></td>
+                        {{-- //New Knowledge --}}
+                        <td class="border border-blue-300">{{ $book->title }}</td>
+                        <td class="border border-blue-300">{{ $book->available }}</td>
+                        <td class="border border-blue-300">{{ $book->author }}</td>
+                        <td class="border border-blue-300">{{ $book->category }}</td>
+                        <td class="border border-blue-300">
+                            <a href="{{ route('book-edit', $book->id) }}"><button
+                                    class="bg-blue-500 text-white px-2 py-1 rounded-lg ">Edit</button></a>
+                            {{-- <form action="{{ route('book-delete', $book->id) }}" method="POST" style="display: inline;">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="bg-red-500 text-white px-2 py-1 rounded-lg deleteButton">Delete</button>
+                            </form> --}}
+                        </td>
+                        <?php $i++; ?>
+                    </tr>
+                @endforeach
+
+
             </table>
-       </div>
-       <div class="h-1/6 w-full flex items-center">
-        <ul class="flex justify-center mx-auto space-x-1">
-            <li>
-               <a href="#"> <button class="bg-blue-500 text-white px-2 py-1 rounded-lg ">Prev</button></a>
-            </li>
-            <li>
-                <button class="bg-blue-500 text-white px-2 py-1 rounded-lg ">1</button>
-            </li>
-            <li>
-                <button class="bg-blue-500 text-white px-2 py-1 rounded-lg ">2</button>
-            </li>
-            <li>
-                <button class="bg-blue-500 text-white px-2 py-1 rounded-lg ">Next</button>
-            </li>
-        </ul>
-       </div>
+        </div>
+        <div class="h-1/6 w-full flex items-center">
+            <ul class="flex justify-center mx-auto space-x-1">
+                <li>
+                    <a href="#"> <button class="bg-blue-500 text-white px-2 py-1 rounded-lg ">Prev</button></a>
+                </li>
+                <li>
+                    <button class="bg-blue-500 text-white px-2 py-1 rounded-lg ">1</button>
+                </li>
+                <li>
+                    <button class="bg-blue-500 text-white px-2 py-1 rounded-lg ">2</button>
+                </li>
+                <li>
+                    <button class="bg-blue-500 text-white px-2 py-1 rounded-lg ">Next</button>
+                </li>
+            </ul>
+        </div>
     </section>
+
+    <div class="modal hidden w-full h-screen fixed left-0 top-0 flex justify-center items-center bg-black bg-opacity-20 ">
+        {{-- Modal --}}
+        <div class="bg-white rounded shadow-lg w-1/3 ">
+            {{-- Modal Header --}}
+            <div class="border-b px-4 py-2">
+                <h3>Modal Title</h3>
+            </div>
+            {{-- Modal Body --}}
+            <form action="{{ route('book-store') }}" method="POST" enctype="multipart/form-data">
+                @csrf
+                <div class="p-3">
+                    <label for="title" class="text-blue-500 font-bold">Judul</label><br>
+                    <input type="text" name="title" id=""
+                        class="w-11/12 border border-blue-500 border-opacity-60 rounded-xl ms-2 py-1 px-4 mt-2">
+                </div>
+                <div class="p-3">
+                    <label for="author" class="text-blue-500 font-bold">Pengarang</label><br>
+                    <input type="text" name="author" id=""
+                        class="w-11/12 border border-blue-500 border-opacity-60 rounded-xl ms-2 py-1 px-4 mt-2">
+                </div>
+                <div class="p-3">
+                    {{-- radio Category --}}
+                    <label for="category" class="text-blue-500 font-bold">Kategori</label><br>
+                    <select name="category" id=""
+                        class="w-11/12 border border-blue-500 border-opacity-60 rounded-xl ms-2 py-1 px-4 mt-2">
+                        <option value="comic">Comic</option>
+                        <option value="drama">Drama</option>
+                        <option value="romance">Romance</option>
+                        <option value="biography">Biography</option>
+                        <option value="socio">Socio</option>
+                    </select>
+                </div>
+                <div class="p-3">
+                    <label for="available" class="text-blue-500 font-bold">Ketersediaan</label><br>
+                    <input type="text" name="available" id=""
+                        class="w-11/12 border border-blue-500 border-opacity-60 rounded-xl ms-2 py-1 px-4 mt-2">
+                </div>
+                <div class="p-3">
+                    <label for="cover" class="text-blue-500 font-bold">Sampul</label><br>
+                    <input type="file" name="cover" id=""
+                        class=" file:bg-blue-500 file:text-white file:rounded-xl py-2">
+                </div>
+                <div class="flex justify-end items-center space-x-3 w-100 border-t p-3">
+                    <button class="bg-blue-600 px-3 py-1 rounded text-white">Okay</button>
+                    <button class="bg-red-600 px-3 py-1 rounded text-white closeModal">Cancel</button>
+                </div>
+        </div>
+    </div>
+    
+    <script>
+        const modal = document.querySelector('.modal')
+        const showModal = document.querySelector('.showModal')
+        const closeModal = document.querySelector('.closeModal')
+
+        showModal.addEventListener('click', () => {
+            modal.classList.remove('hidden')
+        })
+        closeModal.addEventListener('click', () => {
+            modal.classList.add('hidden')
+        })
+        const deleteButtons = document.querySelectorAll('.deleteButton');
+        deleteButtons.forEach(button => {
+            button.addEventListener('click', (event) => {
+                event.preventDefault(); // Prevent the default form submission behavior
+                const form = button.parentElement;
+                form.submit(); // Manually submit the form
+            });
+        });
+    </script>
 @endsection

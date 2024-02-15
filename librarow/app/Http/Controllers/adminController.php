@@ -52,6 +52,23 @@ class adminController extends Controller
         );
     }
 
+    public function book_store($request){
+        $validated = $request->validate([
+            'title' => 'required',
+            'author' => 'required',
+            'category' => 'required',
+            'available' => 'required',
+            'cover' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+        ]);
+
+        $filename = time().'.'.$request->file('cover')->getClientOriginalName();
+        $request->file('cover')->move(public_path('img'), $filename);
+        $validated['cover'] = $filename;
+
+        book::create($validated);
+        return redirect(route('book-data'))->with('success', 'Data Buku Berhasil Ditambahkan');
+    }
+
     public function book_update(Request $request, $id)
     {
        $validated = $request->validate([
