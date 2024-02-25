@@ -25,7 +25,7 @@
             <button type="submit" class="bg-white border border-blue-500 rounded-lg px-5 py-1 mt-3">Cari</button>
             <br>
             <button type="button" data-modal-target="crud-modal" data-modal-toggle="crud-modal"
-                class="bg-blue-500 text-white rounded-lg px-4 py-1 ms-3 mt-2">Tambah Buku</button>
+                class="font-bold bg-white text-blue-500 border border-blue-500 rounded-lg px-4 py-1 ms-3 mt-2 hover:bg-blue-500 hover:border-white hover:text-white transition-all ease-linear delay-50">Tambah Buku</button>
 
         </div>
         <div class="w-full h-4/6 text-center">
@@ -143,21 +143,22 @@
                 let isToggle = false;
 
                 modalToggle.addEventListener('click', function() {
-                    modal.classList.toggle('hidden'); // Toggle the 'hidden' class
-                    modal.classList.toggle('flex'); // Toggle the 'flex' class
+                    modal.classList.toggle('hidden'); 
+                    modal.classList.toggle('flex');
                     if (!modal.classList.contains('hidden')) {
-                        modal.querySelector('input').focus(); // Focus on the first input field
+                        modal.querySelector('input').focus(); 
                     }
                 });
 
                 // Close modal when clicking outside of it
                 modalCloser.addEventListener('click', function(event) {
                     if (event.target === modalCloser) {
-                        modal.classList.add('hidden'); // Add the 'hidden' class
-                        modal.classList.remove('flex'); // Remove the 'flex' class
+                        modal.classList.add('hidden'); 
+                        modal.classList.remove('flex'); 
                         console.log('clicked outside');
                     }
                 });
             })
         </script>
+
     @endsection
