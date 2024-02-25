@@ -59,6 +59,12 @@ class adminController extends Controller
             'category' => 'required',
             'available' => 'required',
             'cover' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+        ],[
+            'title.required' => 'The title field is required',
+            'author.required' => 'The author field is required',
+            'category.required' => 'The category field is required',
+            'available.required' => 'The available field is required',
+            'cover.required' => 'The cover field is required'
         ]);
 
         $filename = time().'.'.$request->file('cover')->getClientOriginalName();

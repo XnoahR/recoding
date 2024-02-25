@@ -1,5 +1,22 @@
 @extends('layouts.main')
 @section('main')
+    @if (Session::get('Success'))
+        {{-- pop up and dissapear --}}
+        <p
+            class="flex justify-center mx-auto w-64 h-16 items-center p-4 mb-4 text-sm text-green-800 border border-green-300 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400 dark:border-green-800 ">
+            {{ Session::get('Success') }}
+        </p>
+    @endif
+    @if ($errors->any())
+        @foreach ($errors->all() as $error)
+            {{-- Make a modal --}}
+            
+            <p
+                class="flex justify-center mx-auto w-64 h-16 items-center p-4 mb-4 text-sm text-red-800 border border-red-300 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400 dark:border-red-800 ">
+                {{ $error }}
+            </p>
+        @endforeach
+    @endif
     <section class="w-3/4 h-screen border border-blue-500 shadow-lg border-opacity-50 rounded-lg mx-auto my-8 p-3">
         <div class="w-full h-1/6">
             <h2 class="text-blue-500 font-bold text-xl ms-3">Data Buku</h2>
@@ -37,11 +54,12 @@
                         <td class="border border-blue-300">
                             <a href="{{ route('book-edit', $book->id) }}"><button
                                     class="bg-blue-500 text-white px-2 py-1 rounded-lg ">Edit</button></a>
-                            {{-- <form action="{{ route('book-delete', $book->id) }}" method="POST" style="display: inline;">
+                            <form action="{{ route('book-delete', $book->id) }}" method="POST" style="display: inline;">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="bg-red-500 text-white px-2 py-1 rounded-lg deleteButton">Delete</button>
-                            </form> --}}
+                                <button type="submit"
+                                    class="bg-red-500 text-white px-2 py-1 rounded-lg deleteButton">Delete</button>
+                            </form>
                         </td>
                         <?php $i++; ?>
                     </tr>
@@ -69,7 +87,7 @@
     </section>
 
     <div id="crud-modal" tabindex="-1" aria-hidden="true"
-        class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+        class="hidden bg-black bg-opacity-30 overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
         <div class="bg-white rounded shadow-lg w-1/3 ">
             {{-- Modal Header --}}
             <div class="border-b px-4 py-2">
@@ -81,12 +99,12 @@
                 <div class="p-3">
                     <label for="title" class="text-blue-500 font-bold">Judul</label><br>
                     <input type="text" name="title" id=""
-                        class="w-11/12 border border-blue-500 border-opacity-60 rounded-xl ms-2 py-1 px-4 mt-2">
+                        class="w-11/12 border border-blue-500 border-opacity-60 rounded-xl ms-2 py-1 px-4 mt-2" required>
                 </div>
                 <div class="p-3">
                     <label for="author" class="text-blue-500 font-bold">Pengarang</label><br>
                     <input type="text" name="author" id=""
-                        class="w-11/12 border border-blue-500 border-opacity-60 rounded-xl ms-2 py-1 px-4 mt-2">
+                        class="w-11/12 border border-blue-500 border-opacity-60 rounded-xl ms-2 py-1 px-4 mt-2" required>
                 </div>
                 <div class="p-3">
                     {{-- radio Category --}}
@@ -103,7 +121,7 @@
                 <div class="p-3">
                     <label for="available" class="text-blue-500 font-bold">Ketersediaan</label><br>
                     <input type="text" name="available" id=""
-                        class="w-11/12 border border-blue-500 border-opacity-60 rounded-xl ms-2 py-1 px-4 mt-2">
+                        class="w-11/12 border border-blue-500 border-opacity-60 rounded-xl ms-2 py-1 px-4 mt-2" required>
                 </div>
                 <div class="p-3">
                     <label for="cover" class="text-blue-500 font-bold">Sampul</label><br>
