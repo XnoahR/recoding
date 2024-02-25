@@ -10,7 +10,7 @@ class book extends Model
     use HasFactory;
     protected $table = 'book';
     protected $primaryKey = 'id';
-    protected $fillalbe = [
+    protected $fillable = [
         'title',
         'author',
         'available',

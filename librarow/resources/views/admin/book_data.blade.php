@@ -1,7 +1,5 @@
 @extends('layouts.main')
 @section('main')
-   
-
     <section class="w-3/4 h-screen border border-blue-500 shadow-lg border-opacity-50 rounded-lg mx-auto my-8 p-3">
         <div class="w-full h-1/6">
             <h2 class="text-blue-500 font-bold text-xl ms-3">Data Buku</h2>
@@ -9,7 +7,8 @@
                 class="w-64 ms-3 px-1 py-1 focus:outline-blue-500">
             <button type="submit" class="bg-white border border-blue-500 rounded-lg px-5 py-1 mt-3">Cari</button>
             <br>
-            <button class="bg-blue-500 text-white rounded-lg px-4 py-1 ms-3 mt-2 showModal">Tambah Buku</button>
+            <button type="button" data-modal-target="crud-modal" data-modal-toggle="crud-modal"
+                class="bg-blue-500 text-white rounded-lg px-4 py-1 ms-3 mt-2">Tambah Buku</button>
 
         </div>
         <div class="w-full h-4/6 text-center">
@@ -69,8 +68,8 @@
         </div>
     </section>
 
-    <div class="modal hidden w-full h-screen fixed left-0 top-0 flex justify-center items-center bg-black bg-opacity-20 ">
-        {{-- Modal --}}
+    <div id="crud-modal" tabindex="-1" aria-hidden="true"
+        class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
         <div class="bg-white rounded shadow-lg w-1/3 ">
             {{-- Modal Header --}}
             <div class="border-b px-4 py-2">
@@ -113,29 +112,34 @@
                 </div>
                 <div class="flex justify-end items-center space-x-3 w-100 border-t p-3">
                     <button class="bg-blue-600 px-3 py-1 rounded text-white">Okay</button>
-                    <button class="bg-red-600 px-3 py-1 rounded text-white closeModal">Cancel</button>
+                    <button type="button" data-modal-close="crud-modal"
+                        class="bg-red-600 px-3 py-1 rounded text-white closeModal">Cancel</button>
                 </div>
         </div>
-    </div>
-    
-    <script>
-        const modal = document.querySelector('.modal')
-        const showModal = document.querySelector('.showModal')
-        const closeModal = document.querySelector('.closeModal')
 
-        showModal.addEventListener('click', () => {
-            modal.classList.remove('hidden')
-        })
-        closeModal.addEventListener('click', () => {
-            modal.classList.add('hidden')
-        })
-        const deleteButtons = document.querySelectorAll('.deleteButton');
-        deleteButtons.forEach(button => {
-            button.addEventListener('click', (event) => {
-                event.preventDefault(); // Prevent the default form submission behavior
-                const form = button.parentElement;
-                form.submit(); // Manually submit the form
-            });
-        });
-    </script>
-@endsection
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const modalToggle = document.querySelector('[data-modal-toggle]');
+                const modalCloser = document.querySelector('[data-modal-close]');
+                const modal = document.getElementById('crud-modal');
+                let isToggle = false;
+
+                modalToggle.addEventListener('click', function() {
+                    modal.classList.toggle('hidden'); // Toggle the 'hidden' class
+                    modal.classList.toggle('flex'); // Toggle the 'flex' class
+                    if (!modal.classList.contains('hidden')) {
+                        modal.querySelector('input').focus(); // Focus on the first input field
+                    }
+                });
+
+                // Close modal when clicking outside of it
+                modalCloser.addEventListener('click', function(event) {
+                    if (event.target === modalCloser) {
+                        modal.classList.add('hidden'); // Add the 'hidden' class
+                        modal.classList.remove('flex'); // Remove the 'flex' class
+                        console.log('clicked outside');
+                    }
+                });
+            })
+        </script>
+    @endsection

@@ -52,7 +52,7 @@ class adminController extends Controller
         );
     }
 
-    public function book_store($request){
+    public function book_store(Request $request){
         $validated = $request->validate([
             'title' => 'required',
             'author' => 'required',
