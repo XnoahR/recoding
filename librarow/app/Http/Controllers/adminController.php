@@ -52,14 +52,15 @@ class adminController extends Controller
         );
     }
 
-    public function book_store(Request $request){
+    public function book_store(Request $request)
+    {
         $validated = $request->validate([
             'title' => 'required',
             'author' => 'required',
             'category' => 'required',
             'available' => 'required',
             'cover' => 'required|image|mimes:jpeg,png,jpg|max:2048',
-        ],[
+        ], [
             'title.required' => 'The title field is required',
             'author.required' => 'The author field is required',
             'category.required' => 'The category field is required',
@@ -67,31 +68,34 @@ class adminController extends Controller
             'cover.required' => 'The cover field is required'
         ]);
 
-        $filename = time().'.'.$request->file('cover')->getClientOriginalName();
+        $filename = time() . '.' . $request->file('cover')->getClientOriginalName();
         $request->file('cover')->move(public_path('img'), $filename);
         $validated['cover'] = $filename;
 
         book::create($validated);
-        return redirect(route('book-data'))->with('success', 'Data Buku Berhasil Ditambahkan');
+        if ($validated) {
+            toastr()->success('Data Buku Berhasil Ditambahkan', 'Success', ['timeOut' => 3000, 'positionClass' => 'toast-bottom-right', 'showMethod' => 'slideDown', 'hideMethod' => 'slideUp', 'showDuration' => 200, 'hideDuration' => 200]);
+            return redirect(route('book-data'));
+        }
     }
 
     public function book_update(Request $request, $id)
     {
-       $validated = $request->validate([
+        $validated = $request->validate([
             'title' => 'required',
             'author' => 'required',
             'category' => 'required',
             'available' => 'required',
             'cover' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
         ]);
-        
+
         $book = book::find($id);
 
-        if($request->hasFile('cover')){
-            $filename = time().'.'.$request->file('cover')->getClientOriginalName();
+        if ($request->hasFile('cover')) {
+            $filename = time() . '.' . $request->file('cover')->getClientOriginalName();
             $request->file('cover')->move(public_path('img'), $filename);
             $validated['cover'] = $filename;
-        }else{
+        } else {
             $validated['cover'] = $book->cover;
         }
 
@@ -102,12 +106,15 @@ class adminController extends Controller
         $book->cover = $validated['cover'];
         $book->save();
 
-        return redirect(route('book-data'))->with('success', 'Data Buku Berhasil Diubah');
+        toastr()->info('Data Buku Berhasil Diubah', 'Info', ['timeOut' => 3000, 'positionClass' => 'toast-bottom-right', 'showMethod' => 'slideDown', 'hideMethod' => 'slideUp', 'showDuration' => 200, 'hideDuration' => 200]);
+        return redirect(route('book-data'));
     }
 
-    public function book_delete($id){
+    public function book_delete($id)
+    {
         $book = book::find($id);
         $book->delete();
-        return redirect(route('book-data'))->with('success', 'Data Buku Berhasil Dihapus');
+        toastr()->info('Data Buku Berhasil Dihapus', 'Info', ['timeOut' => 3000, 'positionClass' => 'toast-bottom-right', 'showMethod' => 'slideDown', 'hideMethod' => 'slideUp', 'showDuration' => 200, 'hideDuration' => 200]);
+        return redirect(route('book-data'));
     }
 }

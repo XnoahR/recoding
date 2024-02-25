@@ -9,12 +9,7 @@
     @endif
     @if ($errors->any())
         @foreach ($errors->all() as $error)
-            {{-- Make a modal --}}
-            
-            <p
-                class="flex justify-center mx-auto w-64 h-16 items-center p-4 mb-4 text-sm text-red-800 border border-red-300 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400 dark:border-red-800 ">
-                {{ $error }}
-            </p>
+            <?php toastr()->error($error,'Failed!',['timeOut' => 3000]);?>
         @endforeach
     @endif
     <section class="w-3/4 h-screen border border-blue-500 shadow-lg border-opacity-50 rounded-lg mx-auto my-8 p-3">
@@ -25,7 +20,8 @@
             <button type="submit" class="bg-white border border-blue-500 rounded-lg px-5 py-1 mt-3">Cari</button>
             <br>
             <button type="button" data-modal-target="crud-modal" data-modal-toggle="crud-modal"
-                class="font-bold bg-white text-blue-500 border border-blue-500 rounded-lg px-4 py-1 ms-3 mt-2 hover:bg-blue-500 hover:border-white hover:text-white transition-all ease-linear delay-50">Tambah Buku</button>
+                class="font-bold bg-white text-blue-500 border border-blue-500 rounded-lg px-4 py-1 ms-3 mt-2 hover:bg-blue-500 hover:border-white hover:text-white transition-all ease-linear delay-50">Tambah
+                Buku</button>
 
         </div>
         <div class="w-full h-4/6 text-center">
@@ -99,12 +95,12 @@
                 <div class="p-3">
                     <label for="title" class="text-blue-500 font-bold">Judul</label><br>
                     <input type="text" name="title" id=""
-                        class="w-11/12 border border-blue-500 border-opacity-60 rounded-xl ms-2 py-1 px-4 mt-2" required>
+                        class="w-11/12 border border-blue-500 border-opacity-60 rounded-xl ms-2 py-1 px-4 mt-2">
                 </div>
                 <div class="p-3">
                     <label for="author" class="text-blue-500 font-bold">Pengarang</label><br>
                     <input type="text" name="author" id=""
-                        class="w-11/12 border border-blue-500 border-opacity-60 rounded-xl ms-2 py-1 px-4 mt-2" required>
+                        class="w-11/12 border border-blue-500 border-opacity-60 rounded-xl ms-2 py-1 px-4 mt-2">
                 </div>
                 <div class="p-3">
                     {{-- radio Category --}}
@@ -125,6 +121,7 @@
                 </div>
                 <div class="p-3">
                     <label for="cover" class="text-blue-500 font-bold">Sampul</label><br>
+                    {{-- image only --}}
                     <input type="file" name="cover" id=""
                         class=" file:bg-blue-500 file:text-white file:rounded-xl py-2">
                 </div>
@@ -143,18 +140,18 @@
                 let isToggle = false;
 
                 modalToggle.addEventListener('click', function() {
-                    modal.classList.toggle('hidden'); 
+                    modal.classList.toggle('hidden');
                     modal.classList.toggle('flex');
                     if (!modal.classList.contains('hidden')) {
-                        modal.querySelector('input').focus(); 
+                        modal.querySelector('input').focus();
                     }
                 });
 
                 // Close modal when clicking outside of it
                 modalCloser.addEventListener('click', function(event) {
                     if (event.target === modalCloser) {
-                        modal.classList.add('hidden'); 
-                        modal.classList.remove('flex'); 
+                        modal.classList.add('hidden');
+                        modal.classList.remove('flex');
                         console.log('clicked outside');
                     }
                 });
